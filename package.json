@@ -1,0 +1,39 @@
+{
+  "name": "uk-progress",
+  "version": "1.0.0",
+  "description": "It is uikit progress component for vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js --open --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-kit/uk-progress.git"
+  },
+  "keywords": [
+    "uikit",
+    "progress",
+    "vue"
+  ],
+  "author": "lixucheng (lixucheng@aliyun.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vue-kit/uk-progress/issues"
+  },
+  "homepage": "https://github.com/vue-kit/uk-progress#readme",
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.4",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "pug": "^2.0.0-rc.2",
+    "vue-loader": "^13.0.2",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "vue": "^2.4.2"
+  }
+}
