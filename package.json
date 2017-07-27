@@ -2,10 +2,11 @@
   "name": "uk-progress",
   "version": "1.0.0",
   "description": "It is uikit progress component for vue",
-  "main": "index.js",
+  "main": "./dist/build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js --open --hot"
+    "test": "npm run build && npm run dev",
+    "dev": "webpack-dev-server --config webpack.test.js --open --hot",
+    "build": "webpack --config webpack.prod.js --progress --hide-modules"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,11 @@
   },
   "homepage": "https://github.com/vue-kit/uk-progress#readme",
   "devDependencies": {
-    "cross-env": "^5.0.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
