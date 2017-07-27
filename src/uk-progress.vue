@@ -1,6 +1,6 @@
 <template lang="pug">
     .uk-progress
-        .uk-progress-bar.uk-progress-bar-default(:style="style") {{ percentage }}
+        .uk-progress-bar(:style="style") {{ percentage }}
 </template>
 <script>
     export default {
@@ -12,6 +12,10 @@
             max: {
                 type: [String, Number],
                 default: 100
+            },
+            color: {
+                type: String,
+                default: "default"
             }
         },
         computed: {
@@ -21,19 +25,25 @@
                 return parseFloat(per) + "%";
             },
             style() {
+                let bg = this.color;
+                if (bg == "default") {
+                    bg = "#1e87f0";
+                } else if (bg == "success") {
+                    bg = "#32d296";
+                } else if (bg == "warning") {
+                    bg = "#faa05a";
+                } else if (bg == "danger") {
+                    bg = "#f0506e";
+                }
                 return {
-                    width: this.percentage
+                    width: this.percentage,
+                    background: bg
                 }
             }
         }
     }
 </script>
 <style lang="less" scoped>
-    @default-color: #1e87f0;
-    @success-color: #32d296;
-    @warning-color: #faa05a;
-    @danger-color: #f0506e;
-
     .transition() {
         -webkit-transition: width 0.6s ease;
                 transition: width 0.6s ease;
@@ -55,17 +65,5 @@
         font-size: 12px;
         color: #fff;
         text-align: center;
-    }
-    .uk-progress-bar-default {
-        background: @default-color;
-    }
-    .uk-progress-bar-success {
-        background: @success-color;
-    }
-    .uk-progress-bar-warning {
-        background: @warning-color;
-    }
-    .uk-progress-bar-danger {
-        background: @danger-color;
     }
 </style>
