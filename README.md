@@ -38,15 +38,19 @@ new Vue({
 
 ## Local test
 
-1. Clone this repository and goto project directory.
+1. Clone repository.
 
-2. Install dependencies
+    ```
+    $ git clone git@github.com:vue-kit/uk-progress.git
+    ```
+
+2. Install dependencies.
 
     ```
     $ npm install
     ```
 
-3. Run test page with hot reload at localhost:8080
+3. Run test page with hot reload at localhost:8080.
 
     ```
     $ npm test
