@@ -1,6 +1,6 @@
 {
   "name": "uk-progress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "It is uikit progress component for vue",
   "main": "./dist/build.js",
   "scripts": {

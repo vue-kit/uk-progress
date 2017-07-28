@@ -6,15 +6,49 @@
     </head>
     <body>
         <div id="app">
-            <uk-progress value="10" max="100"></uk-progress>
-            <br>
-            <uk-progress value="30" max="100" color="success"></uk-progress>
-            <br>
-            <uk-progress value="60" max="100" color="warning"></uk-progress>
-            <br>
-            <uk-progress value="80" max="100" color="danger"></uk-progress>
-            <br>
-            <uk-progress value="33" max="80" color="#35495E"></uk-progress>
+            <div>
+                <span>Value: </span>
+                <select v-model="selectedValue" style="margin:20px 20px 20px 5px;">
+                    <option v-for="option of options" :value="option.value">
+                        {{ option.text }}
+                    </option>
+                </select>
+                <span>Max: </span>
+                <select v-model="selectedMax" style="margin:20px 20px 20px 5px;">
+                    <option v-for="option of options" :value="option.value">
+                        {{ option.text }}
+                    </option>
+                </select>
+            </div>
+            <div>
+                <span>Color: </span>
+                <span style="margin:20px 20px 20px 5px;">
+                    <input type="radio" value="default" id="default" v-model="selectedColor">
+                    <label for="default">default</label>
+                    <input type="radio" value="success" id="success" v-model="selectedColor">
+                    <label for="success">success</label>
+                    <input type="radio" value="warning" id="warning" v-model="selectedColor">
+                    <label for="warning">warning</label>
+                    <input type="radio" value="danger" id="danger" v-model="selectedColor">
+                    <label for="danger">danger</label>
+                    <input v-model.lazy="selectedColor">
+                </span>
+            </div>
+            <div>
+                <span>Width: </span>
+                <select v-model="selectedWidth" style="margin:20px 5px 20px 5px;">
+                    <option v-for="option of options" :value="option.value">
+                        {{ option.text }}
+                    </option>
+                </select>
+                <span>%</span>
+            </div>
+            <!-- The progress component usage -->
+            <uk-progress :value="selectedValue"
+                         :max="selectedMax"
+                         :color="selectedColor"
+                         :width="width">
+            </uk-progress>
         </div>
         <script src="/bundle.js"></script>
     </body>

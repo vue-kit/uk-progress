@@ -1,10 +1,14 @@
 <template lang="pug">
-    .uk-progress
+    .uk-progress(:style="{ width: width }")
         .uk-progress-bar(:style="style") {{ percentage }}
 </template>
 <script>
     export default {
         props: {
+            width: {
+                type: String,
+                default: "100%"
+            },
             value: {
                 type: [String, Number],
                 default: 0
